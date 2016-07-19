@@ -1,0 +1,22 @@
+<div ng-show="vm.selected === list.listName" ng-repeat="list in vm.lists">
+    <input class="fullInput"  placeholder="New Task Name" ng-model="vm.newTask">
+    <button class="fullButton" ng-click="vm.addTask(list, vm.newTask)">Add Task</button>
+    <h1>{{list.listName}}</h1>
+    <div ng-class = "task.deleting === true ? 'deleted': 'elementDiv'" ng-repeat="task in list.taskLists">
+        <img ng-click='vm.markComplete(task);' class='icon' ng-src="{{task.icon}}" />
+        <span>{{task.taskName}}</span>
+        <img class = 'icon delete' ng-click="vm.delete(task, list);" src="../images/icons/delete.png" />
+       <button class="edit" ng-click="vm.openEdit(task);">Edit</button>
+        <div ng-show="vm.selectedTask === task.taskName">
+            <input placeholder="New Task Name" ng-model="vm.newName">
+            <button ng-click="vm.edit(task, vm.newName);">Edit Task</button>
+        </div>
+    </div>
+    <div class="addButton">
+        <button ng-click="vm.clearCompleted(list)">Clear Completed Tasks</button>
+    </div>
+
+</div>
+
+
+<a ui-sref="list">Back</a>

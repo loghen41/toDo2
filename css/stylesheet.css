@@ -1,0 +1,110 @@
+/* All CSS styles are arranged Alphabetically */
+
+::-webkit-input-placeholder {
+    color: black;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: black;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: black;
+}
+
+:-ms-input-placeholder {
+    color: black;
+}
+
+.addButton {
+    text-align: right;
+    margin: 3px;
+}
+
+button {
+}
+
+.clearButton {
+    text-align: left;
+    margin: 3px;
+}
+
+.delete {
+
+}
+
+.deleted {
+    background-color: red;
+    border: 2px solid black;
+    margin: 2px;
+    transition: 2s;
+    height: 2em;
+    font-size: 2em;
+}
+
+.edit {
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.elementDiv {
+    background-color: lightgray;
+    border: 2px solid black;
+    margin: 2px;
+    transition: 2s;
+    height: 2em;
+    font-size: 2em;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.fullButton {
+    width: 18%;
+    margin-left: 2%;
+    height: 2em;
+    font-size: 2em;
+    border-radius: 5px;
+    margin-top: 3em;
+}
+
+.fullInput {
+    width: 70%;
+    margin-left: 5%;
+    background-color: rgba(100, 100, 100, .4);
+    box-shadow: 5px;
+    height: 2em;
+    font-size: 2em;
+    border-radius: 5px;
+    margin-top: 3em;
+}
+
+.icon {
+    max-width: 1.5em;
+    max-height: 1.5em;
+}
+
+.name {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+
+.parentDiv {
+    background-color: lightgray;
+    border: 2px solid black;
+    margin: 2px;
+    transition: 2s;
+}
+
+
+html {
+    background: url('http://www.jurassicworld.com/media/map/locations/bamboo-forest/gallery/bamboo.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+

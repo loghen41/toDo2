@@ -1,0 +1,19 @@
+<div>
+    <input class="fullInput" placeholder="New List Name" ng-model="vm.newList" >
+    <button class="fullButton" ng-click="vm.addList(vm.newList);">Add List</button>
+    <h1>Lists</h1>
+    <div ng-class = " list.deleting === true ? 'deleted': 'elementDiv'" ng-repeat="list in vm.lists">
+        <img ng-click='vm.markComplete(list);' class='icon' ng-src="{{list.icon}}"/>
+        <span ui-sref="task" ng-click="vm.select(list.listName)" class="name">{{list.listName}}</span>
+        <img class='icon delete' ng-click="vm.delete(list);" src="../images/icons/delete.png"/>
+        <button class="edit" ng-click="vm.openEdit(list);">Edit</button>
+        <div ng-show="vm.selected === list.listName">
+            <input placeholder="New List Name" ng-model="vm.newName">
+            <button ng-click="vm.edit(list, vm.newName);">Edit List</button>
+        </div>
+    </div>
+    <div class="addButton">
+
+        <button ng-click="vm.clearCompleted()">Clear Completed Lists</button>
+    </div>
+</div>
