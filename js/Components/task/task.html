@@ -1,22 +1,29 @@
 <div ng-show="vm.selected === list.listName" ng-repeat="list in vm.lists">
-    <input class="fullInput"  placeholder="New Task Name" ng-model="vm.newTask">
-    <button class="fullButton" ng-click="vm.addTask(list, vm.newTask)">Add Task</button>
-    <h1>{{list.listName}}</h1>
-    <div ng-class = "task.deleting === true ? 'deleted': 'elementDiv'" ng-repeat="task in list.taskLists">
-        <img ng-click='vm.markComplete(task);' class='icon' ng-src="{{task.icon}}" />
-        <span>{{task.taskName}}</span>
-        <img class = 'icon delete' ng-click="vm.delete(task, list);" src="../images/icons/delete.png" />
-       <button class="edit" ng-click="vm.openEdit(task);">Edit</button>
+    <div class="header">
+        <p class="headerText">List - {{list.listName}}</p>
+    </div>
+    <form ng-submit="vm.addTask(list, vm.newTask)">
+        <input class="fullInput" placeholder="New Task Name" ng-model="vm.newTask">
+        <button class="fullButton" type="submit">Add Task</button>
+    </form>
+    <div ng-repeat="task in list.taskLists">
+        <div ng-class="task.deleting === true ? 'deleted': 'elementDiv'">
+            <div class="childDiv">
+                <img ng-click='vm.markComplete(task);' class='icon' ng-src="{{task.icon}}"/>
+                <span class="name">{{task.taskName}}</span>
+            </div>
+            <div class='childDiv'>
+                <button class="edit" ng-click="vm.openEdit(task);">Edit</button>
+                <img class='icon delete' ng-click="vm.delete(task, list);" src="../images/icons/delete.png"/>
+            </div>
+        </div>
         <div ng-show="vm.selectedTask === task.taskName">
-            <input placeholder="New Task Name" ng-model="vm.newName">
-            <button ng-click="vm.edit(task, vm.newName);">Edit Task</button>
+            <form ng-submit="vm.edit(task, vm.newName);">
+            <input class="editInput" placeholder="New Task Name" ng-model="vm.newName">
+            <button class="editInputButton" type="submit">Edit - {{task.taskName}}</button>
+            </form>
         </div>
     </div>
-    <div class="addButton">
-        <button ng-click="vm.clearCompleted(list)">Clear Completed Tasks</button>
-    </div>
-
+    <button class="clearButton" ng-click="vm.clearCompleted(list)">Clear Completed Tasks</button>
 </div>
-
-
-<a ui-sref="list">Back</a>
+<button class="backButton" ui-sref="list">Back to Lists</button>

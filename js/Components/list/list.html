@@ -1,19 +1,28 @@
+<div class="header">
+    <p class="headerText">My Lists</p>
+</div>
 <div>
-    <input class="fullInput" placeholder="New List Name" ng-model="vm.newList" >
-    <button class="fullButton" ng-click="vm.addList(vm.newList);">Add List</button>
-    <h1>Lists</h1>
-    <div ng-class = " list.deleting === true ? 'deleted': 'elementDiv'" ng-repeat="list in vm.lists">
-        <img ng-click='vm.markComplete(list);' class='icon' ng-src="{{list.icon}}"/>
-        <span ui-sref="task" ng-click="vm.select(list.listName)" class="name">{{list.listName}}</span>
-        <img class='icon delete' ng-click="vm.delete(list);" src="../images/icons/delete.png"/>
-        <button class="edit" ng-click="vm.openEdit(list);">Edit</button>
+    <form ng-submit="vm.addList(vm.newList);">
+        <input class="fullInput" placeholder="Add a New List" ng-model="vm.newList">
+        <button class="fullButton" type="submit">Add List</button>
+    </form>
+    <div ng-repeat="list in vm.lists">
+        <div ng-class=" list.deleting === true ? 'deleted': 'elementDiv'">
+            <div class="childDiv">
+                <img ng-click='vm.markComplete(list);' class='icon' ng-src="{{list.icon}}"/>
+                <span ui-sref="task" ng-click="vm.select(list.listName)" class="name">{{list.listName}}</span>
+            </div>
+            <div class="childDiv">
+                <button class="edit" ng-click="vm.openEdit(list);">Edit</button>
+                <img class='icon delete' ng-click="vm.delete(list);" src="../images/icons/delete.png"/>
+            </div>
+        </div>
         <div ng-show="vm.selected === list.listName">
-            <input placeholder="New List Name" ng-model="vm.newName">
-            <button ng-click="vm.edit(list, vm.newName);">Edit List</button>
+            <form ng-submit="vm.edit(list, vm.newName);">
+            <input class="editInput" placeholder="New List Name" ng-model="vm.newName">
+            <button class="editInputButton" type="submit">Edit - {{list.listName}}</button>
+            </form>
         </div>
     </div>
-    <div class="addButton">
-
-        <button ng-click="vm.clearCompleted()">Clear Completed Lists</button>
-    </div>
+    <button class="clearButton" ng-click="vm.clearCompleted()">Clear Completed Lists</button>
 </div>

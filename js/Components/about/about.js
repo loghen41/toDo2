@@ -7,7 +7,7 @@ angular.module('App')
         controllerAs: 'vm'
     });
     
-    function aboutController(mainService, $localStorage) {
+    function aboutController() {
         
     }
     

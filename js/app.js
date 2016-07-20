@@ -17,6 +17,10 @@ var app = angular.module('App', ['ui.router', 'ngStorage'])
                 url: '/task',
                 template: '<task></task>'
             })
+            .state('settings', {
+                url: '/settings',
+                template: '<settings></settings>'
+            })
     })
 
 })();

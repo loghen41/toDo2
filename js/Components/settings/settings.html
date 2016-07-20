@@ -1,0 +1,14 @@
+<div class="header">
+    <p class="headerText">App Settings</p>
+</div>
+
+<div class="textDiv">
+    <h2>Select Your App Style</h2>
+    <hr>
+    <span>Background Style:</span>
+    <select ng-model="selectedStyle" ng-options="style.url as style.style for style in vm.styles">
+    </select>
+    <div style="text-align: right; padding: .5em;">
+        <button class="edit" ng-click="vm.applyStyles(selectedStyle);">Apply Styles</button>
+    </div>
+</div>
