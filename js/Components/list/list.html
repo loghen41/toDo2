@@ -19,8 +19,8 @@
         </div>
         <div ng-show="vm.selected === list.listName">
             <form ng-submit="vm.edit(list, vm.newName);">
-            <input class="editInput" placeholder="New List Name" ng-model="vm.newName">
-            <button class="editInputButton" type="submit">Edit - {{list.listName}}</button>
+            <input class="editInput" placeholder="Edit List Name Here" ng-model="vm.newName">
+            <button class="editInputButton" type="submit">Apply</button>
             </form>
         </div>
     </div>

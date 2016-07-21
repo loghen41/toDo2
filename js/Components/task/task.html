@@ -19,8 +19,8 @@
         </div>
         <div ng-show="vm.selectedTask === task.taskName">
             <form ng-submit="vm.edit(task, vm.newName);">
-            <input class="editInput" placeholder="New Task Name" ng-model="vm.newName">
-            <button class="editInputButton" type="submit">Edit - {{task.taskName}}</button>
+            <input class="editInput" placeholder="Edit Task Name Here" ng-model="vm.newName">
+            <button class="editInputButton" type="submit">Update</button>
             </form>
         </div>
     </div>

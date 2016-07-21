@@ -42,7 +42,7 @@
     float: right;
     margin-top: 10px;
     margin-right: 4.75%;
-    width: 18%;
+    width: 40%;
     font-size: 2em;
     border-radius: 5px;
     padding: .3em;
@@ -121,7 +121,7 @@
 }
 
 #footer {
-    position: absolute;
+    position: fixed;
     display: block;
     height: 4em;
     width: 100%;
