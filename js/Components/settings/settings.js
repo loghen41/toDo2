@@ -1,7 +1,9 @@
 (function() {
 angular.module('App')
     .component('settings',{
-       bindings: {},
+       bindings: {
+           background: '='
+       },
         templateUrl: '../js/Components/settings/settings.html',
         controller: settingsController,
         controllerAs: 'vm'
@@ -13,7 +15,8 @@ angular.module('App')
         vm.styles = [];
 
         vm.applyStyles = function(style) {
-          mainService.setStyle(style);
+            mainService.setStyle(style);
+            vm.background.background = "url(" + style + ") no-repeat center center fixed";
         };
 
         function onInit() {

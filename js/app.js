@@ -19,7 +19,7 @@ var app = angular.module('App', ['ui.router', 'ngStorage'])
             })
             .state('settings', {
                 url: '/settings',
-                template: '<settings></settings>'
+                template: '<settings background="vm.style"></settings>'
             })
     })
 

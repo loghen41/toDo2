@@ -5,7 +5,7 @@
 
             //$localStorage.lists = [];
             var lists = $localStorage.lists;
-            var selected = '';
+            var selected = $localStorage.selected;
             var styleOptions = [
                 {
                     style: 'Bamboo',
@@ -160,6 +160,7 @@
             //This sets which list is being Viewed
             this.select = function (item) {
                 selected = item;
+                $localStorage.selected = selected;
             };
 
             //This sets the App Style
