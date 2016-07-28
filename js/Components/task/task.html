@@ -2,10 +2,12 @@
     <div class="header">
         <p class="headerText">List - {{list.listName}}</p>
     </div>
+
     <form ng-submit="vm.addTask(list, vm.newTask)">
         <input class="fullInput" placeholder="New Task Name" ng-model="vm.newTask">
         <button class="fullButton" type="submit">Add Task</button>
     </form>
+    <no-data ng-if="!vm.lists || list.taskLists.length === 0"></no-data>
     <div ng-repeat="task in list.taskLists">
         <div ng-class="task.deleting === true ? 'deleted': 'elementDiv'">
             <div class="childDiv">

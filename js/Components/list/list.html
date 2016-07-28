@@ -1,11 +1,13 @@
 <div class="header">
     <p class="headerText">My Lists</p>
 </div>
+
 <div>
     <form ng-submit="vm.addList(vm.newList);">
         <input class="fullInput" placeholder="Add a New List" ng-model="vm.newList">
         <button class="fullButton" type="submit">Add List</button>
     </form>
+    <no-data ng-if="!vm.lists || vm.lists.length === 0"></no-data>
     <div ng-repeat="list in vm.lists">
         <div ng-class=" list.deleting === true ? 'deleted': 'elementDiv'">
             <div class="childDiv">

@@ -1,6 +1,6 @@
 (function () {
     angular.module('App')
-        .service('mainService', function ($localStorage, $timeout) {
+        .service('mainService', function ($localStorage, $timeout, $http) {
 
 
             //$localStorage.lists = [];
@@ -127,7 +127,7 @@
 
             //Getting Lists for Displaying to to View
             this.get = function () {
-                return lists;
+              return lists;
             };
 
             //this Will Get which List is being Viewed

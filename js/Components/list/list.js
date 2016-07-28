@@ -7,7 +7,7 @@
             controllerAs: 'vm'
         });
 
-    function listController(mainService, $timeout) {
+    function listController(mainService) {
         var vm = this;
         vm.lists = '';
         vm.selected = '';
@@ -64,7 +64,8 @@
 
         //This funciton is called on Initialization
         function onInit() {
-            vm.lists = mainService.get();
+             vm.lists = mainService.get()
+
         }
 
 
